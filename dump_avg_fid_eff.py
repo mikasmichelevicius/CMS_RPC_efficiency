@@ -27,6 +27,8 @@ file = uproot.open(path)
 wheels = ['W-2', 'W-1', 'W0', 'W1', 'W2']
 chamber_eff = {}
 
+roll_level_eff = {}
+
 # dictionary chamber_eff stores chamber name (chamber level) as key and
 # list of efficiency values (roll level - M, F, B)
 for wheel in wheels:
@@ -60,7 +62,14 @@ for wheel in wheels:
             if chName.startswith('RB4,'):
                 chName = chName.replace(',','')
 
-            key = wheel_name+"_"+chName[:-2]+"_S"+sector_str
+            if chName.startswith('RB4-_') and (sector_str == '09' or sector_str == '11'):
+                key = wheel_name+"_RB4_S"+sector_str
+            else:
+                key = wheel_name+"_"+chName[:-2]+"_S"+sector_str
+
+            # key = wheel_name+"_"+chName[:-2]+"_S"+sector_str
+
+            roll_level_eff[wheel_name+"_"+chName+"_S"+sector_str] = eff_value
 
             if key not in chamber_eff.keys():
                 value_list = []
@@ -78,3 +87,6 @@ print(len(chamber_eff))
 averaged_fid_eff = pd.DataFrame(chamber_eff.items(), columns = ['chamber', 'fid_eff_ch_level'])
 print(averaged_fid_eff.head(10))
 averaged_fid_eff.to_csv(path_to_file+'avg_fid_eff.csv', encoding='utf-8', index=False)
+
+roll_level_fid_eff = pd.DataFrame(roll_level_eff.items(), columns = ['chamber', 'fid_eff_roll_level'])
+roll_level_fid_eff.to_csv(path_to_file+'roll_fid_eff.csv', encoding='utf-8', index=False)
