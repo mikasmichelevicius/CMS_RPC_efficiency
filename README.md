@@ -1,6 +1,6 @@
 # CMS RPC efficiency measurments
 
-The goal of the project is to analyse the relevant data and compute the efficiency of Resistant Plate Chambers on a chamber level using  common data science and machine learning practices.
+The goal of the project is to analyse the relevant data and compute the efficiency of Resistive Plate Chambers on a chamber level using  common data science and machine learning practices.
 
 The repository contains python scripts extracting relevant data for RPC efficiency measurements from .root files as well as the DQM system to store the data in .csv format. The final data of 10 runs for each Collisions and Cosmic runs in .csv files are stored in **Collisions/** and **Cosmics/** directories in separate subdirectories for each run.
 
