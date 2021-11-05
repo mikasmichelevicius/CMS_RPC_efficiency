@@ -6,7 +6,7 @@ The repository contains python scripts extracting relevant data for RPC efficien
 
 Jupyter Notebooks **EDA_Collisions.ipynb** and **EDA_Cosmics.ipynb** contains some essential Exploratory Data Analysis for both Collisions and Cosmics data, whereas **efficiency_collisions.ipynb** and **efficiency_cosmics.ipynb** performs some further ML modeling to calculate chamber efficiency based on its metrics such as avg_cluster_size, occupancy, etc.
 
-## Good Git practices
+<!-- ## Good Git practices
 
 Before starting the work, always make sure to pull the recent changes by running command:
 * git pull
@@ -16,5 +16,5 @@ Do the work on the notebooks prepared, after the job is done, don't forget to ad
 * git commit -m "message indicating changes that were done"
 
 After new files were added and changes were committed, always push the changes to the repository by running command:
-* git push -u origin main
+* git push -u origin main -->
 
